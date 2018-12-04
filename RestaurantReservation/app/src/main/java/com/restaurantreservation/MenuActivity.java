@@ -11,7 +11,7 @@ import android.widget.Button;
 public class MenuActivity extends AppCompatActivity {
 
     private Button btnDownload;
-    String downloadURL="http://pruthv.com/android/title.jpg";
+    String downloadURL="http://pruthv.com/android/menu.pdf";
     private int pgNo;
     WebView myWebView;
 
