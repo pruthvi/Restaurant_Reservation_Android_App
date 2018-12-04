@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RestaurantReservation</string>
+
+
+    <string name="download_menu">Download Menu</string>
+    <string name="next">Next</string>
 </resources>

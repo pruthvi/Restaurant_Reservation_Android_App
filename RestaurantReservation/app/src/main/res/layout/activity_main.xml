@@ -8,28 +8,35 @@
 
     <Button
         android:id="@+id/btnMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        android:text="Menu" />
+        android:background="@drawable/gradient_blue"
+        android:onClick="onClickMenu"
+        android:text="Menu"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/btnReservation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:text="Reservation" />
+        android:layout_marginTop="172dp"
+        android:background="@drawable/gradient_blue"
+        android:text="Reservation"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/btnContact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="225dp"
-        android:text="Contact" />
+        android:layout_marginBottom="240dp"
+        android:background="@drawable/gradient_blue"
+        android:text="Contact"
+        android:textColor="@android:color/background_light" />
 </RelativeLayout>
