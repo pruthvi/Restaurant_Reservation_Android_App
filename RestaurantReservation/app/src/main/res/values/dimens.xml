@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Containers -->
+    <dimen name="containerMargin">10pt</dimen>
+
+    <!-- Controls -->
+    <dimen name="labelPadding">3pt</dimen>
+    <dimen name="labelMargin">5pt</dimen>
+    <dimen name="labelWidth">50pt</dimen>
+
+    <dimen name="buttonMargin">10pt</dimen>
+
+    <!-- Authentication -->
+    <dimen name="textAuthenticationCodeWidth">30pt</dimen>
+</resources>

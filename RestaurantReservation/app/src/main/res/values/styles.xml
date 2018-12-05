@@ -13,4 +13,18 @@
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 
+    <!-- Control Theme -->
+    <style name="LabelControlTheme">
+        <item name="android:layout_width">@dimen/labelWidth</item>.
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/labelPadding</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="FormButtonTheme">
+        <item name="android:layout_width">match_parent</item>.
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/buttonMargin</item>
+        <item name="android:layout_marginBottom">@dimen/buttonMargin</item>
+    </style>
 </resources>

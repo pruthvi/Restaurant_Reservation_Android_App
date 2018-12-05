@@ -10,5 +10,11 @@
 
     <string name="address">941 Progress Ave, Scarborough, ON M1G 3T8</string>
 
-
+    <!-- Login Page & Registration -->
+    <string name="labelPhoneNumber">Phone Number: </string>
+    <string name="labelPassword">Password: </string>
+    <string name="labelAuthenticationCode">Enter 4 Digit Code: </string>
+    <string name="labelFirstName">First Name: </string>
+    <string name="labelLastName">Last Name: </string>
+    <string name="btnRegister">Register</string>
 </resources>
