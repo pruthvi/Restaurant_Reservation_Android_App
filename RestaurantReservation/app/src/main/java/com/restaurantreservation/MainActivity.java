@@ -22,11 +22,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public  void onClickContact(View view)
     {
-        Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:4377769707"));
-
-
-        startActivity(callIntent);
+        Intent intent;
+        intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
 
     }
 

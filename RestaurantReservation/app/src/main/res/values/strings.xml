@@ -4,4 +4,11 @@
 
     <string name="download_menu">Download Menu</string>
     <string name="next">Next</string>
+    <string name="call">Call</string>
+
+    <string name="email">Email</string>
+
+    <string name="address">941 Progress Ave, Scarborough, ON M1G 3T8</string>
+
+
 </resources>
