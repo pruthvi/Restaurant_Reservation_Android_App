@@ -17,4 +17,5 @@
     <string name="labelFirstName">First Name: </string>
     <string name="labelLastName">Last Name: </string>
     <string name="btnRegister">Register</string>
+    <string name="btnLogin">Login</string>
 </resources>

@@ -27,7 +27,8 @@
         android:layout_marginTop="172dp"
         android:background="@drawable/gradient_blue"
         android:text="Reservation"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/background_light"
+        android:onClick="onClickReservation"/>
 
     <Button
         android:id="@+id/btnContact"
