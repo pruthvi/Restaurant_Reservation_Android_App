@@ -27,22 +27,30 @@
                 android:id="@+id/textAuthenticationCode1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="@dimen/textAuthenticationCodeWidth"/>
+                android:width="@dimen/textAuthenticationCodeWidth"
+                android:textAlignment="center"
+                android:maxLength="1"/>
             <EditText
                 android:id="@+id/textAuthenticationCode2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="@dimen/textAuthenticationCodeWidth"/>
+                android:width="@dimen/textAuthenticationCodeWidth"
+                android:textAlignment="center"
+                android:maxLength="1"/>
             <EditText
                 android:id="@+id/textAuthenticationCode3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="@dimen/textAuthenticationCodeWidth"/>
+                android:width="@dimen/textAuthenticationCodeWidth"
+                android:textAlignment="center"
+                android:maxLength="1"/>
             <EditText
                 android:id="@+id/textAuthenticationCode4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="@dimen/textAuthenticationCodeWidth"/>
+                android:width="@dimen/textAuthenticationCodeWidth"
+                android:textAlignment="center"
+                android:maxLength="1"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
