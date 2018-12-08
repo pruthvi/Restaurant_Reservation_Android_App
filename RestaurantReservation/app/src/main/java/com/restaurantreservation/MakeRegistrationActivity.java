@@ -1,6 +1,7 @@
 package com.restaurantreservation;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,23 +45,38 @@ public class MakeRegistrationActivity extends AppCompatActivity {
         }
 
         // Check if Reservation already Exists
-//        String date = registrationForm[1].getText().toString();
-//        String time = registrationForm[2].getText().toString();
+        String date = registrationForm[1].getText().toString();
+        String time = registrationForm[2].getText().toString();
 
-        String noOfPeople = registrationForm[0].getText().toString();
-        String registrationDate = registrationForm[1].getText().toString();
-        String arrivalTime = registrationForm[2].getText().toString();
-        String specialNote = registrationForm[3].getText().toString();
+        if(dbManager.ReservationExists("tbl_reservation", date, time)){
+            Toast.makeText(this,"Table is already reserved for this time", Toast.LENGTH_SHORT).show();
+        }
+        else {
 
-        String[] personalInfoFields = {"phoneNumber", "numberOfGuest", "reservationDate", "arrivalTime", "notes"};
-        String[] personalInfoRecords = {phoneNumber, noOfPeople, registrationDate, arrivalTime, specialNote};
+            String noOfPeople = registrationForm[0].getText().toString();
+            String registrationDate = registrationForm[1].getText().toString();
+            String arrivalTime = registrationForm[2].getText().toString();
+            String specialNote = registrationForm[3].getText().toString();
 
-        long id = dbManager.addRecord(new ContentValues(), "tbl_reservation", personalInfoFields, personalInfoRecords);
+            String[] personalInfoFields = {"phoneNumber", "numberOfGuest", "reservationDate", "arrivalTime", "notes"};
+            String[] personalInfoRecords = {phoneNumber, noOfPeople, registrationDate, arrivalTime, specialNote};
 
-        if (id > -1) {
-            Toast.makeText(this, phoneNumber + "reserved a table", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "Unable to register.", Toast.LENGTH_SHORT).show();
+            long id = dbManager.addRecord(new ContentValues(), "tbl_reservation", personalInfoFields, personalInfoRecords);
+
+            if (id > -1) {
+                Toast.makeText(this, phoneNumber + "reserved a table", Toast.LENGTH_LONG).show();
+
+                // Reset all the values to null
+                registrationForm[0].setText("");
+                registrationForm[1].setText("");
+                registrationForm[2].setText("");
+                registrationForm[3].setText("");
+
+                startActivity(new Intent(this,ViewRegistration.class));
+
+            } else {
+                Toast.makeText(this, "Unable to register.", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

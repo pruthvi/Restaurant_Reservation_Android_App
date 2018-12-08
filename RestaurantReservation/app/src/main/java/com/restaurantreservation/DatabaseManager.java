@@ -192,9 +192,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     // check if Reservation Already Exists at the Specific Time
     public boolean ReservationExists(String tableName, String date, String time){
-        String selectQuery = "SELECT * FROM " + tableName + " WHERE " + date + " =? " + " AND " + time + " =? ";
+        String selectQuery = "SELECT * FROM " + tableName + " WHERE reservationDate = " + date + " AND arrivalTime = " + time;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, new String[]{date, time});
+        Cursor cursor = db.rawQuery(selectQuery, null);
 
         if(cursor.getCount() > 0){
            return true;

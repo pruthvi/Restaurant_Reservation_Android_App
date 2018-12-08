@@ -36,7 +36,7 @@
                 android:layout_weight="1"
                 android:text="@string/my_registration"
                 android:padding="30dp"
-                android:onClick="Registration"
+                android:onClick="MyRegistration"
                 />
 
         </LinearLayout>
