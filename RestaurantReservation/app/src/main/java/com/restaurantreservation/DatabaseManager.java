@@ -189,6 +189,20 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return  false;
     }
 
+
+    // check if Reservation Already Exists at the Specific Time
+    public boolean ReservationExists(String tableName, String date, String time){
+        String selectQuery = "SELECT * FROM " + tableName + " WHERE " + date + " =? " + " AND " + time + " =? ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, new String[]{date, time});
+
+        if(cursor.getCount() > 0){
+           return true;
+            }
+
+        return  false;
+    }
+
     // Update a record
     public boolean updateRecord(ContentValues values, String tableName, String fields[], String record[]) {
         SQLiteDatabase db = this.getWritableDatabase();

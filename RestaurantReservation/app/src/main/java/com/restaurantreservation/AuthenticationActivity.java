@@ -43,8 +43,7 @@ public class AuthenticationActivity extends AppCompatActivity implements KeyEven
             textCode[i].addTextChangedListener(new OnEnterCodeListener(textCode[i + 1]));
         }
 
-        // TODO change MainActivity.class to Reservation Page
-        textCode[textCode.length - 1].addTextChangedListener(new OnFinishInputCodeListener(this, new Intent(AuthenticationActivity.this, MainActivity.class)));
+        textCode[textCode.length - 1].addTextChangedListener(new OnFinishInputCodeListener(this, new Intent(AuthenticationActivity.this, ReservationActivity.class)));
     }
 
     public static String GenerateCode(int digits){
