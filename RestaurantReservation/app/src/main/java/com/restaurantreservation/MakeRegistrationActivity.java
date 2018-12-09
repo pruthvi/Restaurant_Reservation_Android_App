@@ -67,12 +67,12 @@ public class MakeRegistrationActivity extends AppCompatActivity {
                 Toast.makeText(this, phoneNumber + "reserved a table", Toast.LENGTH_LONG).show();
 
                 // Reset all the values to null
-                registrationForm[0].setText("");
-                registrationForm[1].setText("");
-                registrationForm[2].setText("");
-                registrationForm[3].setText("");
+//                registrationForm[0].setText("");
+//                registrationForm[1].setText("");
+//                registrationForm[2].setText("");
+//                registrationForm[3].setText("");
 
-                startActivity(new Intent(this,ViewRegistration.class));
+                //startActivity(new Intent(this,ViewRegistration.class));
 
             } else {
                 Toast.makeText(this, "Unable to register.", Toast.LENGTH_SHORT).show();

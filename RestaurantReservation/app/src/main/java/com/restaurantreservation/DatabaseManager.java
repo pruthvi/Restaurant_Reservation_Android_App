@@ -70,7 +70,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
         if (cursor.getCount() > 0){
             return true;
         }
-
         return  false;
     }
 
@@ -201,6 +200,26 @@ public class DatabaseManager extends SQLiteOpenHelper {
             }
 
         return  false;
+    }
+
+    // Display the Reservation Table Details
+    public String DisplayReservationDetails(String tableName, String phoneNumber){
+        String displayQuery = " SELECT * FROM " + tableName + " WHERE phoneNumber =" + phoneNumber;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(displayQuery, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                // TODO Changing this to appropriate format
+                return cursor.getString(0) + " " + cursor.getString(1) + " " + cursor.getString(2);
+            }while (cursor.moveToNext());
+        }
+        else {
+            return "No Reservation";
+        }
+
+
+//        return false;
     }
 
     // Update a record
