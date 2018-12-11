@@ -37,6 +37,12 @@
         <activity android:name=".ReservationActivity" />
         <activity android:name=".MakeRegistrationActivity" />
         <activity android:name=".ViewRegistration"></activity>
+
+        <service android:name=".WebServices.MySimpleService">
+            <intent-filter>
+                <action android:name="com.restaurantreservation.WebServices.MySimpleService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

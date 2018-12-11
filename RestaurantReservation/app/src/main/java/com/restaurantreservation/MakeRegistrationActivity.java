@@ -52,6 +52,8 @@ public class MakeRegistrationActivity extends AppCompatActivity {
         timePickerEditText.setText(Calendar.HOUR_OF_DAY + ":" + Calendar.MINUTE);
     }
 
+
+
     public void onClickMakeRegistration(View view) {
         // Loop through each required field, request focus if no filled
         for (int i = 0; i < registrationForm.length; i++) {
@@ -63,9 +65,12 @@ public class MakeRegistrationActivity extends AppCompatActivity {
             }
         }
 
+        String noOfPeople = registrationForm[0].getText().toString();
+        String registrationDate = selectDateBtn.getText().toString();
+        String arrivalTime = timePickerEditText.getText().toString();
+        String specialNote = registrationForm[1].getText().toString();
+
         // Check if Reservation already Exists
-        String date = selectDateBtn.getText().toString();
-        String time = timePickerEditText.getText().toString();
 
 //        if(dbManager.ReservationExists("tbl_reservation", date, time)){
 //            Toast.makeText(this,"Table is already reserved for this time", Toast.LENGTH_SHORT).show();
@@ -75,10 +80,7 @@ public class MakeRegistrationActivity extends AppCompatActivity {
         }
         else {
 
-            String noOfPeople = registrationForm[0].getText().toString();
-            String registrationDate = date;
-            String arrivalTime = time;
-            String specialNote = registrationForm[1].getText().toString();
+
 
             String[] personalInfoFields = {"phoneNumber", "numberOfGuest", "reservationDate", "arrivalTime", "notes"};
             String[] personalInfoRecords = {phoneNumber, noOfPeople, registrationDate, arrivalTime, specialNote};
@@ -87,6 +89,8 @@ public class MakeRegistrationActivity extends AppCompatActivity {
 
             if (id > -1) {
                 Toast.makeText(this, phoneNumber + "reserved a table", Toast.LENGTH_LONG).show();
+
+//                SendConfirmationMessage(phoneNumber);
 
                 // Reset all the values to null
 //                registrationForm[0].setText("");
@@ -102,6 +106,10 @@ public class MakeRegistrationActivity extends AppCompatActivity {
         }
     }
 
+    private void SendConfirmationMessage(String phoneNumber){
+        MainActivity.smsMessageSender.SendMessage(phoneNumber,
+                "You have successfully booked for " + dbManager.SendConfirmationMessage(phoneNumber) + ". Thank you!");
+    }
     public void CancelButton(View view){
         startActivity(new Intent(this,ReservationActivity.class));
     }

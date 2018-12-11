@@ -213,7 +213,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                // TODO Changing this to appropriate format
                 printMe[i] =  "\nTable Number: " + cursor.getString(1) + "\n<b> Number of People " + cursor.getString(2)+ "\nDate: " + cursor.getString(3)+ "\nTime: " + cursor.getString(4)+ "\nNotes: " + cursor.getString(5);
                 i++;
             }while (cursor.moveToNext());
@@ -221,10 +220,20 @@ public class DatabaseManager extends SQLiteOpenHelper {
         else {
 //            return "No Reservation";
         }
-        cursor.close();
     return printMe;
 
 //        return false;
+    }
+
+    // Message Display
+    public String SendConfirmationMessage(String phoneNumber){
+        String sendQuery = "SELECT * FROM tbl_reservation WHERE phoneNumber =" + phoneNumber;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sendQuery, null);
+
+        cursor.moveToLast();
+            return cursor.getString(1) + " for " + cursor.getString(2) + "," +cursor.getString(3);
+
     }
 
     // Update a record

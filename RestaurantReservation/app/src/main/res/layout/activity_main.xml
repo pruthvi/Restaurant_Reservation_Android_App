@@ -50,6 +50,18 @@
             android:onClick="onClickContact"
             android:text="Contact"
             android:layout_marginTop="260dp"/>
+
+        <ToggleButton
+            android:id="@+id/togglebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="Music on"
+            android:textOff="Music off"
+            android:onClick="onToggleClicked"
+            style="@style/ConfirmButton"/>
     </LinearLayout>
+
+
+
 
 </RelativeLayout>

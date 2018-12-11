@@ -9,6 +9,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ToggleButton;
+
+import com.restaurantreservation.WebServices.MySimpleService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,5 +54,26 @@ public class MainActivity extends AppCompatActivity {
         Intent intent;
         intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+    }
+
+    public void onResume()
+    {
+        super.onResume();
+
+    }
+
+    public void onToggleClicked(View view) {
+        // Is the toggle on?
+        boolean on = ((ToggleButton) view).isChecked();
+
+        if (on) {
+            // Enable vibrate
+            //startService(view);
+            startService(new Intent(getBaseContext(), MySimpleService.class));
+        } else {
+            // Disable vibrate
+            //stopService(view);
+            stopService(new Intent(getBaseContext(), MySimpleService.class));
+        }
     }
 }
