@@ -3,9 +3,12 @@ package com.restaurantreservation.WebServices;
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.widget.Toast;
+
+import com.restaurantreservation.R;
 
 public class MySimpleService extends Service{
     private MediaPlayer player;
@@ -20,8 +23,8 @@ public class MySimpleService extends Service{
 
         //getting systems default ringtone
         // TODO change the default ringtone to something else
-        player = MediaPlayer.create(this,
-                Settings.System.DEFAULT_RINGTONE_URI);
+        player = MediaPlayer.create(this, R.raw.music);
+          //      Settings.System.DEFAULT_RINGTONE_URI);
 
         //setting loop play to true
         //this will make the ringtone continuously playing

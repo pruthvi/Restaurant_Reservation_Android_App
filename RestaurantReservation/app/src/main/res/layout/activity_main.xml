@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="@drawable/gradient_blue"
     >
 
     <LinearLayout
@@ -47,21 +48,42 @@
             style="@style/OtherButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:background="@drawable/gradient_white"
             android:onClick="onClickContact"
             android:text="Contact"
-            android:layout_marginTop="260dp"/>
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="31dp"
+        android:orientation="vertical">
+
+    <!--    <ToggleButton
+            android:id="@+id/togglebutton"
+            style="@style/ConfirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onToggleClicked"
+            android:textAlignment="center"
+            android:textOff="Music off"
+            android:textOn="Music on" /> -->
 
         <ToggleButton
             android:id="@+id/togglebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textOn="Music on"
-            android:textOff="Music off"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/music_selector"
             android:onClick="onToggleClicked"
-            style="@style/ConfirmButton"/>
+            android:textAlignment="center"
+            android:textOff="Music Off"
+            android:textOn="Music On" />
     </LinearLayout>
-
-
 
 
 </RelativeLayout>
