@@ -211,7 +211,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 // TODO Changing this to appropriate format
-                return cursor.getString(0) + " " + cursor.getString(1) + " " + cursor.getString(2);
+                return "\nTable Number: " + cursor.getString(1) + "\n<b> Number of People " + cursor.getString(2)+ "\nDate: " + cursor.getString(3)+ "\nTime: " + cursor.getString(4)+ "\nNotes: " + cursor.getString(5);
             }while (cursor.moveToNext());
         }
         else {

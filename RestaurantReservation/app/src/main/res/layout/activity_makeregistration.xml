@@ -49,13 +49,22 @@
                 android:text="@string/date"
                 style="@style/LabelControlTheme"/>
 
-            <EditText
-                android:id="@+id/txtDate"
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="number"/>
+                android:text="2015-10-9"
+                android:id="@+id/book_selectDateBtn"
+                android:onClick="book_openDatePicker"
+                android:layout_weight="4"
+                android:textSize="16dp" />
+
+            <!--<EditText-->
+                <!--android:id="@+id/txtDate"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:ems="5"-->
+                <!--android:inputType="number"/>-->
         </LinearLayout>
 
         <LinearLayout
@@ -71,13 +80,23 @@
                 android:text="Time:"
                 style="@style/LabelControlTheme"/>
 
-            <EditText
-                android:id="@+id/txtTime"
+            <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="time" />
+                android:layout_height="40dp"
+                android:id="@+id/book_timePickerBtn"
+                android:onClick="book_openTimePicker"
+                android:layout_weight="4"
+                android:text="21:00"
+                android:textSize="16dp"
+                 />
+
+            <!--<EditText-->
+                <!--android:id="@+id/txtTime"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:ems="5"-->
+                <!--android:inputType="time" />-->
         </LinearLayout>
 
         <LinearLayout
