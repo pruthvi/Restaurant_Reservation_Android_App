@@ -40,7 +40,8 @@ public class AuthenticationActivity extends AppCompatActivity implements KeyEven
                 findViewById(R.id.textAuthenticationCode4)};
 
         for(int i = 0; i < textCode.length - 1; i++){
-            textCode[i].addTextChangedListener(new OnEnterCodeListener(textCode[i + 1]));
+            textCode[i].addTextChangedListener(new OnEnterCodeListener(textCode[i], textCode[i + 1]));
+            textCode[i+1].setEnabled(false);
         }
 
         textCode[textCode.length - 1].addTextChangedListener(new OnFinishInputCodeListener(this, new Intent(AuthenticationActivity.this, ReservationActivity.class)));
@@ -57,7 +58,13 @@ public class AuthenticationActivity extends AppCompatActivity implements KeyEven
 
     private void ResetFields(){
         for(int i = 0; i < textCode.length; i++){
-           textCode[i].setText("");
+            textCode[i].setText("");
+            if(i == 0){
+                textCode[0].setEnabled(true);
+            }
+            else {
+                textCode[i].setEnabled(false);
+            }
         }
         textCode[0].requestFocus();
     }
@@ -93,6 +100,8 @@ public class AuthenticationActivity extends AppCompatActivity implements KeyEven
                 if(code.equalsIgnoreCase(c)){
                     dbManager.generateNewAuthenticationCode(phoneNumber, 4, 5);
                     startActivity(nextActivity);
+                    // Finishes the activity to prevent user go back
+                    finish();
                 }
                 else {
                     activity.ResetFields();
@@ -107,9 +116,11 @@ public class AuthenticationActivity extends AppCompatActivity implements KeyEven
 
     class OnEnterCodeListener implements TextWatcher{
 
+        private EditText currentEditText;
         private EditText nextEditText;
 
-        public OnEnterCodeListener(EditText nextEditText){
+        public OnEnterCodeListener(EditText currentEditText, EditText nextEditText){
+            this.currentEditText = currentEditText;
             this.nextEditText = nextEditText;
         }
         @Override
@@ -124,6 +135,8 @@ public class AuthenticationActivity extends AppCompatActivity implements KeyEven
 
         @Override
         public void afterTextChanged(Editable s) {
+            currentEditText.setEnabled(false);
+            nextEditText.setEnabled(true);
             nextEditText.requestFocus();
         }
     }

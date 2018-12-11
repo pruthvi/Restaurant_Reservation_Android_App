@@ -29,7 +29,8 @@ public class LoginActivity extends AppCompatActivity {
 
         dbManager = new DatabaseManager(this);
 
-   //     dbManager.deleteDatabase(this);
+        //Comment this to prevent reset database
+        dbManager.deleteDatabase(this);
 
         dbManager.CreateDatabase(getApplicationContext());
         dbManager.InitDatabase(tables, tableCreatorString);

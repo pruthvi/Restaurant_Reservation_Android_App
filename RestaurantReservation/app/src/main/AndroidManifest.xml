@@ -41,7 +41,7 @@
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".AuthenticationActivity" />
         <activity android:name=".ReservationActivity" />
-        <activity android:name=".MakeRegistrationActivity" />
+        <activity android:name=".MakeRegistrationActivity"/>
 
         <activity android:name=".ViewReservationActivity"></activity>
         <meta-data
