@@ -25,7 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/make_registration"
-                android:padding="30dp"
+                style="@style/ConfirmButton"
+                android:layout_gravity="center"
                 android:onClick="MakeRegistration"
                 />
 
@@ -35,7 +36,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/my_registration"
-                android:padding="30dp"
+                style="@style/OtherButton"
+                android:layout_gravity="center"
                 android:onClick="MyRegistration"
                 />
 

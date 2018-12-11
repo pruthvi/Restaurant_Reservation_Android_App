@@ -70,10 +70,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
-            style="@style/FormButtonTheme"
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            style="@style/CancelButton"
+            android:onClick="CancelButton"
+            android:paddingLeft="50dp"
+            android:paddingRight="40dp"/>
+
+        <Button
             android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/btnRegister"
-            android:onClick="onClickRegisterAccount"/>
+            style="@style/ConfirmButton"
+            android:onClick="onClickRegisterAccount"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"/>
     </LinearLayout>
 </LinearLayout>

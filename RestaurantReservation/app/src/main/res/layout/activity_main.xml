@@ -4,41 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
-    <Button
-        android:id="@+id/btnMenu"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/gradient_blue"
-        android:onClick="onClickMenu"
-        android:text="Menu"
-        android:textColor="@android:color/background_light" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnReservation"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="172dp"
-        android:background="@drawable/gradient_blue"
-        android:text="Reservation"
-        android:textColor="@android:color/background_light"
-        android:onClick="onClickReservation"/>
+        <Button
+            android:id="@+id/btnMenu"
+            style="@style/ConfirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:onClick="onClickMenu"
+            android:text="Menu" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnContact"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="240dp"
-        android:background="@drawable/gradient_blue"
-        android:onClick="onClickContact"
-        android:text="Contact"
-        android:textColor="@android:color/background_light" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnReservation"
+            style="@style/CancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="170dp"
+            android:onClick="onClickReservation"
+            android:text="Reservation" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnContact"
+            style="@style/OtherButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickContact"
+            android:text="Contact"
+            android:layout_marginTop="260dp"/>
+    </LinearLayout>
+
 </RelativeLayout>

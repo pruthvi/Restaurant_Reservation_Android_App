@@ -1,6 +1,7 @@
 package com.restaurantreservation;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -73,5 +74,9 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    public void CancelButton(View view){
+        startActivity(new Intent(this,LoginActivity.class));
     }
 }

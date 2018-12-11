@@ -24,4 +24,5 @@
     <string name="date">Date:</string>
     <string name="special_note">Special Note:</string>
     <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
 </resources>

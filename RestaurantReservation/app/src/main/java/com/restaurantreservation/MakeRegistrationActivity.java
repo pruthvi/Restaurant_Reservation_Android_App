@@ -79,4 +79,8 @@ public class MakeRegistrationActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void CancelButton(View view){
+        startActivity(new Intent(this,ReservationActivity.class));
+    }
 }
