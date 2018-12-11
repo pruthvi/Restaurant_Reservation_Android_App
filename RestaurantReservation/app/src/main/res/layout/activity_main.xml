@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
 
-    android:layout_margin="@dimen/containerMargin"
+    android:padding="@dimen/containerMargin"
 
     android:background="@drawable/gradient_blue"
     >
@@ -55,7 +55,6 @@
             android:background="@drawable/gradient_white"
             android:onClick="onClickContact"
             android:text="Contact"
-            android:layout_marginTop="260dp"
             android:layout_marginBottom="@dimen/containerMargin"/>
             android:textColor="@android:color/black" />
 

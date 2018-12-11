@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
         dbManager = new DatabaseManager(this);
 
-        //dbManager.deleteDatabase(this);
+   //     dbManager.deleteDatabase(this);
 
         dbManager.CreateDatabase(getApplicationContext());
         dbManager.InitDatabase(tables, tableCreatorString);

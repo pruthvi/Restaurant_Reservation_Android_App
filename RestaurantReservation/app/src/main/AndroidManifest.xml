@@ -44,9 +44,6 @@
         <activity android:name=".MakeRegistrationActivity" />
 
         <activity android:name=".ViewReservationActivity"></activity>
-
-
-        <activity android:name=".ViewRegistration"></activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_api_key" />
