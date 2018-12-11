@@ -18,4 +18,11 @@
     <string name="labelLastName">Last Name: </string>
     <string name="btnRegister">Register</string>
     <string name="btnLogin">Login</string>
+    <string name="my_registration">My Registration</string>
+    <string name="make_registration">Make Registration</string>
+    <string name="no_of_people">No. of People:</string>
+    <string name="date">Date:</string>
+    <string name="special_note">Special Note:</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
 </resources>

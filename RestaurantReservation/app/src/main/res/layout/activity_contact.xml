@@ -32,10 +32,9 @@
         android:layout_alignStart="@+id/mapView"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="154dp"
-        android:background="@drawable/gradient_blue"
         android:onClick="onClickCall"
         android:text="@string/call"
-        android:textColor="@android:color/background_light" />
+        style="@style/ConfirmButton" />
 
     <Button
         android:id="@+id/btnEmail"
@@ -44,8 +43,8 @@
         android:layout_alignStart="@+id/mapView"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="216dp"
-        android:layout_marginBottom="151dp"
-        android:background="@drawable/gradient_red"
+        android:layout_marginBottom="154dp"
+        style="@style/CancelButton"
         android:text="@string/email"
-        android:textColor="@android:color/background_light" />
+  />
 </RelativeLayout>

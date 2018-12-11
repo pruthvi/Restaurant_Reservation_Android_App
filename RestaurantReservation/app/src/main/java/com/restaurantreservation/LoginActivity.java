@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
     // Table Creator String
     private static final String tableCreatorString[] =
             { "CREATE TABLE tbl_account (phoneNumber INTEGER PRIMARY KEY, password TEXT NOT NULL, firstName TEXT NOT NULL, lastName TEXT NOT NULL);",
-                    "CREATE TABLE tbl_reservation (phoneNumber INTEGER, tableId INTEGER PRIMARY KEY, numberOfGuest INTEGER, arrivalTime TEXT, notes TEXT, FOREIGN KEY(phoneNumber) REFERENCES tbl_account(phoneNumber));",
+                    "CREATE TABLE tbl_reservation (phoneNumber INTEGER, tableId INTEGER PRIMARY KEY, numberOfGuest INTEGER, reservationDate INTEGER,arrivalTime TEXT, notes TEXT, FOREIGN KEY(phoneNumber) REFERENCES tbl_account(phoneNumber));",
                     "CREATE TABLE tbl_authentication (phoneNumber INTEGER, code TEXT, expiryTime TEXT, FOREIGN KEY(phoneNumber) REFERENCES tbl_account(phoneNumber));"};
 
     @Override
@@ -53,8 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 editor.apply();
             }
             else {
-                // TODO change MainActivity.class to Reservation Page
-                intent = new Intent(this, MainActivity.class);
+                intent = new Intent(this, ReservationActivity.class);
             }
             if(intent != null){
                 startActivity(intent);

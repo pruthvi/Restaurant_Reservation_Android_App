@@ -23,18 +23,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
+
             <EditText
                 android:id="@+id/textAuthenticationCode1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="@dimen/textAuthenticationCodeWidth"
-                android:textAlignment="center"
-                android:maxLength="1"/>
+                android:inputType="number"
+                android:maxLength="1"
+                android:textAlignment="center" />
             <EditText
                 android:id="@+id/textAuthenticationCode2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="@dimen/textAuthenticationCodeWidth"
+                android:inputType="number"
                 android:textAlignment="center"
                 android:maxLength="1"/>
             <EditText
@@ -42,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="@dimen/textAuthenticationCodeWidth"
+                android:inputType="number"
                 android:textAlignment="center"
                 android:maxLength="1"/>
             <EditText
@@ -49,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="@dimen/textAuthenticationCodeWidth"
+                android:inputType="number"
                 android:textAlignment="center"
                 android:maxLength="1"/>
         </LinearLayout>

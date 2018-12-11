@@ -27,4 +27,25 @@
         <item name="android:layout_marginTop">@dimen/buttonMargin</item>
         <item name="android:layout_marginBottom">@dimen/buttonMargin</item>
     </style>
+
+    <style name="ConfirmButton">
+        <item name="android:background">#34cf95</item>
+        <item name="android:fontFamily">Arial</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="CancelButton">
+        <item name="android:background">#ee5f45</item>
+        <item name="android:fontFamily">Arial</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="OtherButton">
+        <item name="android:background">#756f7c</item>
+        <item name="android:fontFamily">Arial</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
 </resources>
