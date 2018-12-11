@@ -25,4 +25,11 @@
     <string name="special_note">Special Note:</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
+
+    <!-- View Reservation -->
+    <string name="labelTableNumber">Table Number:</string>
+    <string name="labelNumberOfGuess">Number of Guess:</string>
+    <string name="labelDate">Reservation Date:</string>
+    <string name="labelTime">Arrival Time:</string>
+    <string name="labelNotes">Notes:</string>
 </resources>

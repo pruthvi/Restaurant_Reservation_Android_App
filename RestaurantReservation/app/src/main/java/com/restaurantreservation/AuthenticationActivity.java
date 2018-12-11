@@ -91,6 +91,7 @@ public class AuthenticationActivity extends AppCompatActivity implements KeyEven
                 }
                 String c = dbManager.getAuthenticationCode(phoneNumber);
                 if(code.equalsIgnoreCase(c)){
+                    dbManager.generateNewAuthenticationCode(phoneNumber, 4, 5);
                     startActivity(nextActivity);
                 }
                 else {

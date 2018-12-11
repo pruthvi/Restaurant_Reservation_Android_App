@@ -63,8 +63,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 // Add the time with code to the database
                 dbManager.addRecord(new ContentValues(),"tbl_authentication", authenticationFields, authenticationRecords);
-                // Generate Code for the first time
-                dbManager.generateNewAuthenticationCode(phoneNumber, 4, 5);
+                // Generate Code for the first time, the expiry time is set to 0 so that the user need authentication on the first login
+                dbManager.generateNewAuthenticationCode(phoneNumber, 4, 0);
 
                 // Back to the previous page
                 finish();

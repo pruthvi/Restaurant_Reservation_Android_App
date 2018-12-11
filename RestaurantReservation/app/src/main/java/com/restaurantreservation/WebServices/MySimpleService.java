@@ -23,8 +23,13 @@ public class MySimpleService extends Service{
 
         //getting systems default ringtone
         // TODO change the default ringtone to something else
+
+        player = MediaPlayer.create(this,
+                Settings.System.DEFAULT_RINGTONE_URI);
+
         player = MediaPlayer.create(this, R.raw.music);
-          //      Settings.System.DEFAULT_RINGTONE_URI);
+
+
 
         //setting loop play to true
         //this will make the ringtone continuously playing
