@@ -203,7 +203,10 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     // Display the Reservation Table Details
-    public String DisplayReservationDetails(String tableName, String phoneNumber){
+    public String[] DisplayReservationDetails(String tableName, String phoneNumber){
+
+        String[] printMe = new String[200];
+        int i = 0;
         String displayQuery = " SELECT * FROM " + tableName + " WHERE phoneNumber =" + phoneNumber;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(displayQuery, null);
@@ -211,13 +214,15 @@ public class DatabaseManager extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 // TODO Changing this to appropriate format
-                return "\nTable Number: " + cursor.getString(1) + "\n<b> Number of People " + cursor.getString(2)+ "\nDate: " + cursor.getString(3)+ "\nTime: " + cursor.getString(4)+ "\nNotes: " + cursor.getString(5);
+                printMe[i] =  "\nTable Number: " + cursor.getString(1) + "\n<b> Number of People " + cursor.getString(2)+ "\nDate: " + cursor.getString(3)+ "\nTime: " + cursor.getString(4)+ "\nNotes: " + cursor.getString(5);
+                i++;
             }while (cursor.moveToNext());
         }
         else {
-            return "No Reservation";
+//            return "No Reservation";
         }
-
+        cursor.close();
+    return printMe;
 
 //        return false;
     }

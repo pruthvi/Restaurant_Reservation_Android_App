@@ -3,6 +3,8 @@ package com.restaurantreservation;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class ViewRegistration extends AppCompatActivity {
@@ -11,6 +13,8 @@ public class ViewRegistration extends AppCompatActivity {
     private SharedPreferences userInfoPref;
     String phoneNumber;
     TextView displayText;
+
+    String[] display;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,13 @@ public class ViewRegistration extends AppCompatActivity {
 
         displayText = (TextView) findViewById(R.id.txtDisplayReservations);
 
-        displayText.setText(dbManager.DisplayReservationDetails("tbl_reservation", phoneNumber));
+        display = dbManager.DisplayReservationDetails("tbl_reservation", phoneNumber);
+
+        StringBuilder builder = new StringBuilder();
+        for(String details : display){
+            builder.append(details + "\n");
+        }
+        displayText.setText(builder.toString());
     }
 
 }
