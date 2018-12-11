@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/containerMargin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/labelPadding">
+        <TextView
+            android:layout_width="@dimen/labelViewReservationWidth"
+            android:layout_height="wrap_content"
+            android:text="@string/labelTableNumber"
+            android:textAlignment="viewEnd"
+            android:layout_marginEnd="@dimen/containerMargin"/>
+        <TextView
+            android:id="@+id/txtTableNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/labelPadding">
+        <TextView
+            android:layout_width="@dimen/labelViewReservationWidth"
+            android:layout_height="wrap_content"
+            android:text="@string/labelNumberOfGuess"
+            android:textAlignment="viewEnd"
+            android:layout_marginEnd="@dimen/containerMargin"/>
+        <TextView
+            android:id="@+id/txtNumberOfGuess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/labelPadding">
+        <TextView
+            android:layout_width="@dimen/labelViewReservationWidth"
+            android:layout_height="wrap_content"
+            android:text="@string/labelDate"
+            android:textAlignment="viewEnd"
+            android:layout_marginEnd="@dimen/containerMargin"/>
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/labelPadding">
+        <TextView
+            android:layout_width="@dimen/labelViewReservationWidth"
+            android:layout_height="wrap_content"
+            android:text="@string/labelTime"
+            android:textAlignment="viewEnd"
+            android:layout_marginEnd="@dimen/containerMargin"/>
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/labelPadding">
+        <TextView
+            android:layout_width="@dimen/labelViewReservationWidth"
+            android:layout_height="wrap_content"
+            android:text="@string/labelNotes"
+            android:textAlignment="viewEnd"
+            android:layout_marginEnd="@dimen/containerMargin"/>
+        <TextView
+            android:id="@+id/txtNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>

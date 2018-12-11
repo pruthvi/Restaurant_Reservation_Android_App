@@ -93,7 +93,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
             }
 
             if(currentMin >= expiryMin){
-                generateNewAuthenticationCode(phoneNumber, 4, 5);
                 return true;
             }
         }
@@ -188,41 +187,45 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return  false;
     }
 
+    public boolean TableAvaliable(int tableNumber){
+        String selectQuery = "SELECT * FROM " + "tbl_reservation" + " WHERE tableId = " + tableNumber;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if(cursor.getCount() > 0){
+            return false;
+        }
+        return true;
+    }
 
     // check if Reservation Already Exists at the Specific Time
-    public boolean ReservationExists(String tableName, String date, String time){
-        String selectQuery = "SELECT * FROM " + tableName + " WHERE reservationDate = " + date + " AND arrivalTime = " + time;
+    public boolean ReservationExists(String tableName, String phoneNumber, String date, String time){
+        String selectQuery = "SELECT * FROM " + tableName + " WHERE phoneNumber = " + phoneNumber + " AND reservationDate = '" + date + "' AND arrivalTime = '" + time + "'";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         if(cursor.getCount() > 0){
            return true;
-            }
+        }
 
         return  false;
     }
 
     // Display the Reservation Table Details
-    public String[] DisplayReservationDetails(String tableName, String phoneNumber){
-
-        String[] printMe = new String[200];
-        int i = 0;
-        String displayQuery = " SELECT * FROM " + tableName + " WHERE phoneNumber =" + phoneNumber;
+    public ArrayList<Reservation> GetReservationFromPhoneNumber(String phoneNumber){
+        String displayQuery = " SELECT * FROM tbl_reservation WHERE phoneNumber =" + phoneNumber;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(displayQuery, null);
 
+        ArrayList<Reservation> reservations = new ArrayList<>();
+
         if(cursor.moveToFirst()){
             do{
-                printMe[i] =  "\nTable Number: " + cursor.getString(1) + "\n<b> Number of People " + cursor.getString(2)+ "\nDate: " + cursor.getString(3)+ "\nTime: " + cursor.getString(4)+ "\nNotes: " + cursor.getString(5);
-                i++;
+                Reservation r = new Reservation(cursor.getInt(0), cursor.getInt(1), cursor.getInt(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+                reservations.add(r);
             }while (cursor.moveToNext());
         }
-        else {
-//            return "No Reservation";
-        }
-    return printMe;
-
-//        return false;
+        return reservations;
     }
 
     // Message Display

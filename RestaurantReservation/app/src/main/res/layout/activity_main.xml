@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:layout_margin="@dimen/containerMargin"
     >
 
     <LinearLayout
@@ -49,7 +50,8 @@
             android:layout_height="wrap_content"
             android:onClick="onClickContact"
             android:text="Contact"
-            android:layout_marginTop="260dp"/>
+            android:layout_marginTop="260dp"
+            android:layout_marginBottom="@dimen/containerMargin"/>
 
         <ToggleButton
             android:id="@+id/togglebutton"

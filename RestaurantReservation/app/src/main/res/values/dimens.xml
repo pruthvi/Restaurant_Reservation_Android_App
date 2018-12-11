@@ -7,9 +7,12 @@
     <dimen name="labelPadding">3pt</dimen>
     <dimen name="labelMargin">5pt</dimen>
     <dimen name="labelWidth">50pt</dimen>
-
+    <dimen name="labelSize">30sp</dimen>
     <dimen name="buttonMargin">10pt</dimen>
 
     <!-- Authentication -->
     <dimen name="textAuthenticationCodeWidth">30pt</dimen>
+
+    <!-- View Reservation -->
+    <dimen name="labelViewReservationWidth">130sp</dimen>
 </resources>

@@ -8,32 +8,39 @@
 
     <WebView
         android:id="@+id/menu_view"
-        android:layout_width="277dp"
-        android:layout_height="419dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="51dp" />
-
-    <Button
-        android:id="@+id/btnDownload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/menu_view"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="56dp"
-        style="@style/OtherButton"
-        android:onClick="onDownload"
-        android:text="@string/download_menu" />
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/buttonPanel"/>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/menu_view"
-        android:layout_alignEnd="@+id/menu_view"
-        style="@style/ConfirmButton"
-        android:onClick="onClickNext"
-        android:text="@string/next" />
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+            <Button
+                android:id="@+id/btnDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/OtherButton"
+                android:onClick="onDownload"
+                android:text="@string/download_menu"
+                android:layout_weight="2"/>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ConfirmButton"
+                android:onClick="onClickNext"
+                android:text="@string/next"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
 </RelativeLayout>

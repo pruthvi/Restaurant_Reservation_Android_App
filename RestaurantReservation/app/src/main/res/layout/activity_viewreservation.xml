@@ -4,20 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewRegistration"
-    android:layout_margin="@dimen/containerMargin">
+    tools:context=".ViewReservationActivity"
+    android:layout_margin="@dimen/containerMargin"
+    android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/txtDisplayReservations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Display the Reserved Tables here!!" />
+        android:text="My Reservations"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textSize="@dimen/labelSize"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/labelMargin"/>
 
     <ListView
         android:id="@+id/lstView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -39,9 +39,9 @@ public class MakeRegistrationActivity extends AppCompatActivity {
 
         phoneNumber = userInfoPref.getString("phoneNumber", "");
         registrationForm = new EditText[]{
-                findViewById(R.id.txtPeople),
-
-                findViewById(R.id.txtSpecialNote)
+                findViewById(R.id.txtPeople)
+                // Note is not mandatory
+                ,findViewById(R.id.txtSpecialNote)
         };
         selectDateBtn = (Button) findViewById(R.id.book_selectDateBtn);
         timePickerEditText = (Button) findViewById(R.id.book_timePickerBtn);
@@ -56,9 +56,11 @@ public class MakeRegistrationActivity extends AppCompatActivity {
 
     public void onClickMakeRegistration(View view) {
         // Loop through each required field, request focus if no filled
-        for (int i = 0; i < registrationForm.length; i++) {
+        // Note is not mandatory, no need to check
+        //for (int i = 0; i < registrationForm.length; i++) {
+        for (int i = 0; i < 1; i++) {
             if (registrationForm[i].getText().length() == 0) {
-                Toast.makeText(this, registrationForm[i].getHint() + "is required.",
+                Toast.makeText(this, registrationForm[i].getHint() + " is required.",
                         Toast.LENGTH_SHORT).show();
                 registrationForm[i].requestFocus();
                 return;
@@ -70,38 +72,37 @@ public class MakeRegistrationActivity extends AppCompatActivity {
         String arrivalTime = timePickerEditText.getText().toString();
         String specialNote = registrationForm[1].getText().toString();
 
-        // Check if Reservation already Exists
+        String tableNumber = ReservationActivity.GetFreeTable();
 
-//        if(dbManager.ReservationExists("tbl_reservation", date, time)){
-//            Toast.makeText(this,"Table is already reserved for this time", Toast.LENGTH_SHORT).show();
-//        }
-        if(false){
-            Toast.makeText(this,"Table is already reserved for this time", Toast.LENGTH_SHORT).show();
+        // Check if a table is available
+        if(tableNumber == null){
+            Toast.makeText(this,"No table available", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Check if Reservation already Exists
+        if(dbManager.ReservationExists("tbl_reservation", phoneNumber, registrationDate, arrivalTime)){
+            Toast.makeText(this,"You already reserved for this time", Toast.LENGTH_SHORT).show();
         }
         else {
+            String[] reservationInfoFields = {"phoneNumber", "tableId", "numberOfGuest", "reservationDate", "arrivalTime", "notes"};
+            String[] reservationInfoRecords = {phoneNumber, tableNumber, noOfPeople, registrationDate, arrivalTime, specialNote};
 
-
-
-            String[] personalInfoFields = {"phoneNumber", "numberOfGuest", "reservationDate", "arrivalTime", "notes"};
-            String[] personalInfoRecords = {phoneNumber, noOfPeople, registrationDate, arrivalTime, specialNote};
-
-            long id = dbManager.addRecord(new ContentValues(), "tbl_reservation", personalInfoFields, personalInfoRecords);
+            long id = dbManager.addRecord(new ContentValues(), "tbl_reservation", reservationInfoFields, reservationInfoRecords);
 
             if (id > -1) {
-                Toast.makeText(this, phoneNumber + "reserved a table", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, phoneNumber + " reserved a table", Toast.LENGTH_LONG).show();
 
-//                SendConfirmationMessage(phoneNumber);
+                SendConfirmationMessage(phoneNumber);
 
                 // Reset all the values to null
-//                registrationForm[0].setText("");
-//                registrationForm[1].setText("");
-//                registrationForm[2].setText("");
-//                registrationForm[3].setText("");
+                registrationForm[0].setText("");
+                registrationForm[1].setText("");
 
-                //startActivity(new Intent(this,ViewRegistration.class));
+                startActivity(new Intent(this,ViewReservationActivity.class));
 
             } else {
-                Toast.makeText(this, "Unable to register.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Unable to make reservation.", Toast.LENGTH_SHORT).show();
             }
         }
     }
