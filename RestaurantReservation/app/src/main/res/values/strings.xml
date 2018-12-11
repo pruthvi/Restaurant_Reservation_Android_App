@@ -5,10 +5,10 @@
     <string name="download_menu">Download Menu</string>
     <string name="next">Next</string>
     <string name="call">Call</string>
-
     <string name="email">Email</string>
-
     <string name="address">941 Progress Ave, Scarborough, ON M1G 3T8</string>
+    <string name="map_api_key">AIzaSyA3f-xv4I9G0di0xZy41lzHLfqty1BxBZU</string>
+
 
     <!-- Login Page & Registration -->
     <string name="labelPhoneNumber">Phone Number: </string>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactActivity">
+    tools:context=".ContactActivity"
+    android:background="@drawable/gradient_white">
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
@@ -27,24 +28,26 @@
 
     <Button
         android:id="@+id/btnCall"
+        style="@style/ConfirmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/mapView"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="154dp"
+        android:background="@drawable/round_button"
         android:onClick="onClickCall"
         android:text="@string/call"
-        style="@style/ConfirmButton" />
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnEmail"
+        style="@style/CancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/mapView"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="216dp"
         android:layout_marginBottom="154dp"
-        style="@style/CancelButton"
-        android:text="@string/email"
-  />
+        android:onClick="onClickEmail"
+        android:text="@string/email" />
 </RelativeLayout>
