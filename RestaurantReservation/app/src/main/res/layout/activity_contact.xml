@@ -48,6 +48,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="216dp"
         android:layout_marginBottom="154dp"
+        android:background="@drawable/round_button"
         android:onClick="onClickEmail"
         android:text="@string/email" />
 </RelativeLayout>

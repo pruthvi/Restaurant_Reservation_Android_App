@@ -22,8 +22,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
+            android:background="@drawable/gradient_white"
             android:onClick="onClickMenu"
-            android:text="Menu" />
+            android:text="Menu"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
     <LinearLayout
@@ -37,8 +39,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="170dp"
+            android:background="@drawable/gradient_white"
             android:onClick="onClickReservation"
-            android:text="Reservation" />
+            android:text="Reservation"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
     <LinearLayout
@@ -52,10 +56,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="260dp"
+            android:layout_marginBottom="@dimen/containerMargin"
             android:background="@drawable/gradient_white"
             android:onClick="onClickContact"
             android:text="Contact"
-            android:layout_marginBottom="@dimen/containerMargin"/>
+            android:textColor="@android:color/black" />
             android:textColor="@android:color/black" />
 
     </LinearLayout>
